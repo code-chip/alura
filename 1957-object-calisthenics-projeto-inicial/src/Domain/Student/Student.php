@@ -43,10 +43,10 @@ class Student
     private function setEmail(string $email)
     {
         if (filter_var($email, FILTER_VALIDATE_EMAIL) !== false) {
-            $this->email = $email;
-        } else {
             throw new \InvalidArgumentException('Invalid e-mail address');
         }
+
+        $this->email = $email;
     }
 
     public function getEmail(): string
