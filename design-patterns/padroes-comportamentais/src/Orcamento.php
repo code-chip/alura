@@ -2,31 +2,38 @@
 
 namespace Alura\DesignPattern;
 
+use Alura\DesignPattern\EstadosOrcamento\EmAprovacao;
+use Alura\DesignPattern\EstadosOrcamento\EstadoOrcamento;
 use phpDocumentor\Reflection\Types\This;
 
 class Orcamento
 {
     public int $quantidadeItens;
     public float $valor;
-    public string $estadoAtual;
+    public EstadoOrcamento $estadoAtual;
+
+    public function __construct()
+    {
+        $this->estadoAtual = new EmAprovacao();
+    }
 
     public function aplicaDescontoExtra()
     {
-         $this->valor -= $this->calculaDescontoExtra();
+         $this->valor -= $this->estadoAtual->calculaDescontoExtra($this);
     }
 
-    public function calculaDescontoExtra(): float
+    public function aprova()
     {
-        if ($this->estadoAtual == 'EM_APROVAÇÃO')
-        {
-            return $this->valor * 0.05;
-        }
+        $this->estadoAtual->aprova();
+    }
 
-        if ($this->estadoAtual == 'APROVADO')
-        {
-            return $this->valor * 0.02;
-        }
+    public function reprova()
+    {
+        $this->estadoAtual->reprova();
+    }
 
-        throw new \DomainException('Orçamentos reprovados e finalizados não podem receber desconto.');
+    public function finaliza()
+    {
+        $this->estadoAtual->finaliza();
     }
 }
