@@ -37,6 +37,6 @@ class ListaDeOrcamentos implements \IteratorAggregate
     {
         return array_filter(
             $this->orcamentos, fn(Orcamento $orcamento) => $orcamento->estadoAtual instanceof Finalizado
-        )
+        );
     }
 }
