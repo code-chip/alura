@@ -7,8 +7,6 @@ use Alura\DesignPattern\Orcamento;
 abstract class EstadoOrcamento
 {
     /**
-     * @param Orcamento $orcamento
-     * @return float
      * @throws \DomainException
      */
     abstract public function calculaDescontoExtra(Orcamento $orcamento): float;
@@ -20,7 +18,7 @@ abstract class EstadoOrcamento
 
     public function reprova(Orcamento $orcamento)
     {
-        throw new \DomainException('Este orçamento não pode ser reprovado');
+        throw new \DomainException('Este orçamento não pode ser reprovad');
     }
 
     public function finaliza(Orcamento $orcamento)

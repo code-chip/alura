@@ -20,5 +20,4 @@ class EmAprovacao extends EstadoOrcamento
     {
         $orcamento->estadoAtual = new Reprovado();
     }
-
 }

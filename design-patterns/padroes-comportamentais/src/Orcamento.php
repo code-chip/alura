@@ -4,7 +4,6 @@ namespace Alura\DesignPattern;
 
 use Alura\DesignPattern\EstadosOrcamento\EmAprovacao;
 use Alura\DesignPattern\EstadosOrcamento\EstadoOrcamento;
-use phpDocumentor\Reflection\Types\This;
 
 class Orcamento
 {
@@ -19,21 +18,21 @@ class Orcamento
 
     public function aplicaDescontoExtra()
     {
-         $this->valor -= $this->estadoAtual->calculaDescontoExtra($this);
+        $this->valor -= $this->estadoAtual->calculaDescontoExtra($this);
     }
 
     public function aprova()
     {
-        $this->estadoAtual->aprova();
+        $this->estadoAtual->aprova($this);
     }
 
     public function reprova()
     {
-        $this->estadoAtual->reprova();
+        $this->estadoAtual->reprova($this);
     }
 
     public function finaliza()
     {
-        $this->estadoAtual->finaliza();
+        $this->estadoAtual->finaliza($this);
     }
 }

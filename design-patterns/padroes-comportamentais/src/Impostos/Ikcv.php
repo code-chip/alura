@@ -6,7 +6,6 @@ use Alura\DesignPattern\Orcamento;
 
 class Ikcv extends ImpostoCom2Aliquotas
 {
-
     protected function deveAplicarTaxaMaxima(Orcamento $orcamento): bool
     {
         return $orcamento->valor > 300 && $orcamento->quantidadeItens > 3;

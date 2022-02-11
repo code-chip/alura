@@ -12,5 +12,6 @@ abstract class Desconto
     {
         $this->proximoDesconto = $proximoDesconto;
     }
+
     abstract public function calculaDesconto(Orcamento $orcamento): float;
 }

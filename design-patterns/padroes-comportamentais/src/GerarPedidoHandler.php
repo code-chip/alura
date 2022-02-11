@@ -6,18 +6,14 @@ use Alura\DesignPattern\AcoesAoGerarPedido\AcaoAposGerarPedido;
 use Alura\DesignPattern\AcoesAoGerarPedido\CriarPedidoNoBanco;
 use Alura\DesignPattern\AcoesAoGerarPedido\EnviarPedidoPorEmail;
 use Alura\DesignPattern\AcoesAoGerarPedido\LogGerarPedido;
-use Alura\DesignPattern\GerarPedido;
 
 class GerarPedidoHandler
 {
-    /**
-     * @var AcaoAposGerarPedido[]
-     */
+    /** @var AcaoAposGerarPedido[] */
     private array $acoesAposGerarPedido = [];
 
     public function __construct(/* PedidoRepository, MailService */)
     {
-
     }
 
     public function adicionarAcaoAoGerarPedido(AcaoAposGerarPedido $acao)
@@ -28,7 +24,7 @@ class GerarPedidoHandler
     public function execute(GerarPedido $gerarPedido)
     {
         $orcamento = new Orcamento();
-        $orcamento->quantidadeItens = $gerarPedido->getNumeroDeItens();
+        $orcamento->quantidadeItens = $gerarPedido->getNumeroItens();
         $orcamento->valor = $gerarPedido->getValorOrcamento();
 
         $pedido = new Pedido();

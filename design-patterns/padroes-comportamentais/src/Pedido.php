@@ -2,8 +2,6 @@
 
 namespace Alura\DesignPattern;
 
-use Alura\DesignPattern\Orcamento;
-
 class Pedido
 {
     public string $nomeCliente;
