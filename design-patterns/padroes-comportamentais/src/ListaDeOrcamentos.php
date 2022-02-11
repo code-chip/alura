@@ -2,9 +2,11 @@
 
 namespace Alura\DesignPattern;
 
+use Exception;
 use phpDocumentor\Reflection\Types\This;
+use Traversable;
 
-class ListaDeOrcamentos
+class ListaDeOrcamentos implements \IteratorAggregate
 {
     /**
      * @var Orcamento[]
@@ -23,5 +25,10 @@ class ListaDeOrcamentos
     public function orcamentos(): array
     {
         return $this->orcamentos;
+    }
+
+    public function getIterator()
+    {
+        return new \ArrayIterator($this->orcamentos);
     }
 }
