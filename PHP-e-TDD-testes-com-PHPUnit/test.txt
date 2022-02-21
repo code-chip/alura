@@ -1,0 +1,60 @@
+
+##teamcity[testCount count='9' flowId='33672']
+
+##teamcity[testSuiteStarted name='Alura\Leilao\Tests\Service\AvaliadorTest' locationHint='php_qn:///home/will/Documentos/projetos/alura/PHP-e-TDD-testes-com-PHPUnit/tests/AvaliadorTest.php::\Alura\Leilao\Tests\Service\AvaliadorTest' flowId='33672']
+
+##teamcity[testSuiteStarted name='testAvaliadorDeveEncontrarOMaiorValorDeLances' locationHint='php_qn:///home/will/Documentos/projetos/alura/PHP-e-TDD-testes-com-PHPUnit/tests/AvaliadorTest.php::\Alura\Leilao\Tests\Service\AvaliadorTest::testAvaliadorDeveEncontrarOMaiorValorDeLances' flowId='33672']
+
+##teamcity[testStarted name='testAvaliadorDeveEncontrarOMaiorValorDeLances with data set "ordem-aleatoria"' locationHint='php_qn:///home/will/Documentos/projetos/alura/PHP-e-TDD-testes-com-PHPUnit/tests/AvaliadorTest.php::\Alura\Leilao\Tests\Service\AvaliadorTest::testAvaliadorDeveEncontrarOMaiorValorDeLances with data set "ordem-aleatoria"' flowId='33672']
+2500
+
+##teamcity[testFinished name='testAvaliadorDeveEncontrarOMaiorValorDeLances with data set "ordem-aleatoria"' duration='1' flowId='33672']
+
+##teamcity[testStarted name='testAvaliadorDeveEncontrarOMaiorValorDeLances with data set "ordem-crescente"' locationHint='php_qn:///home/will/Documentos/projetos/alura/PHP-e-TDD-testes-com-PHPUnit/tests/AvaliadorTest.php::\Alura\Leilao\Tests\Service\AvaliadorTest::testAvaliadorDeveEncontrarOMaiorValorDeLances with data set "ordem-crescente"' flowId='33672']
+2500
+
+##teamcity[testFinished name='testAvaliadorDeveEncontrarOMaiorValorDeLances with data set "ordem-crescente"' duration='0' flowId='33672']
+
+##teamcity[testStarted name='testAvaliadorDeveEncontrarOMaiorValorDeLances with data set "ordem-decrescente"' locationHint='php_qn:///home/will/Documentos/projetos/alura/PHP-e-TDD-testes-com-PHPUnit/tests/AvaliadorTest.php::\Alura\Leilao\Tests\Service\AvaliadorTest::testAvaliadorDeveEncontrarOMaiorValorDeLances with data set "ordem-decrescente"' flowId='33672']
+2500
+
+##teamcity[testFinished name='testAvaliadorDeveEncontrarOMaiorValorDeLances with data set "ordem-decrescente"' duration='0' flowId='33672']
+
+##teamcity[testSuiteFinished name='testAvaliadorDeveEncontrarOMaiorValorDeLances' flowId='33672']
+
+##teamcity[testSuiteStarted name='testAvaliadorDeveEncontrarOMenorValorDeLances' locationHint='php_qn:///home/will/Documentos/projetos/alura/PHP-e-TDD-testes-com-PHPUnit/tests/AvaliadorTest.php::\Alura\Leilao\Tests\Service\AvaliadorTest::testAvaliadorDeveEncontrarOMenorValorDeLances' flowId='33672']
+
+##teamcity[testStarted name='testAvaliadorDeveEncontrarOMenorValorDeLances with data set "ordem-aleatoria"' locationHint='php_qn:///home/will/Documentos/projetos/alura/PHP-e-TDD-testes-com-PHPUnit/tests/AvaliadorTest.php::\Alura\Leilao\Tests\Service\AvaliadorTest::testAvaliadorDeveEncontrarOMenorValorDeLances with data set "ordem-aleatoria"' flowId='33672']
+1700
+
+##teamcity[testFinished name='testAvaliadorDeveEncontrarOMenorValorDeLances with data set "ordem-aleatoria"' duration='0' flowId='33672']
+
+##teamcity[testStarted name='testAvaliadorDeveEncontrarOMenorValorDeLances with data set "ordem-crescente"' locationHint='php_qn:///home/will/Documentos/projetos/alura/PHP-e-TDD-testes-com-PHPUnit/tests/AvaliadorTest.php::\Alura\Leilao\Tests\Service\AvaliadorTest::testAvaliadorDeveEncontrarOMenorValorDeLances with data set "ordem-crescente"' flowId='33672']
+1700
+
+##teamcity[testFinished name='testAvaliadorDeveEncontrarOMenorValorDeLances with data set "ordem-crescente"' duration='0' flowId='33672']
+
+##teamcity[testStarted name='testAvaliadorDeveEncontrarOMenorValorDeLances with data set "ordem-decrescente"' locationHint='php_qn:///home/will/Documentos/projetos/alura/PHP-e-TDD-testes-com-PHPUnit/tests/AvaliadorTest.php::\Alura\Leilao\Tests\Service\AvaliadorTest::testAvaliadorDeveEncontrarOMenorValorDeLances with data set "ordem-decrescente"' flowId='33672']
+1700
+
+##teamcity[testFinished name='testAvaliadorDeveEncontrarOMenorValorDeLances with data set "ordem-decrescente"' duration='0' flowId='33672']
+
+##teamcity[testSuiteFinished name='testAvaliadorDeveEncontrarOMenorValorDeLances' flowId='33672']
+
+##teamcity[testSuiteStarted name='testAvaliadorDeveBuscar3MaioresLances' locationHint='php_qn:///home/will/Documentos/projetos/alura/PHP-e-TDD-testes-com-PHPUnit/tests/AvaliadorTest.php::\Alura\Leilao\Tests\Service\AvaliadorTest::testAvaliadorDeveBuscar3MaioresLances' flowId='33672']
+
+##teamcity[testStarted name='testAvaliadorDeveBuscar3MaioresLances with data set "ordem-aleatoria"' locationHint='php_qn:///home/will/Documentos/projetos/alura/PHP-e-TDD-testes-com-PHPUnit/tests/AvaliadorTest.php::\Alura\Leilao\Tests\Service\AvaliadorTest::testAvaliadorDeveBuscar3MaioresLances with data set "ordem-aleatoria"' flowId='33672']
+
+##teamcity[testFinished name='testAvaliadorDeveBuscar3MaioresLances with data set "ordem-aleatoria"' duration='0' flowId='33672']
+
+##teamcity[testStarted name='testAvaliadorDeveBuscar3MaioresLances with data set "ordem-crescente"' locationHint='php_qn:///home/will/Documentos/projetos/alura/PHP-e-TDD-testes-com-PHPUnit/tests/AvaliadorTest.php::\Alura\Leilao\Tests\Service\AvaliadorTest::testAvaliadorDeveBuscar3MaioresLances with data set "ordem-crescente"' flowId='33672']
+
+##teamcity[testFinished name='testAvaliadorDeveBuscar3MaioresLances with data set "ordem-crescente"' duration='0' flowId='33672']
+
+##teamcity[testStarted name='testAvaliadorDeveBuscar3MaioresLances with data set "ordem-decrescente"' locationHint='php_qn:///home/will/Documentos/projetos/alura/PHP-e-TDD-testes-com-PHPUnit/tests/AvaliadorTest.php::\Alura\Leilao\Tests\Service\AvaliadorTest::testAvaliadorDeveBuscar3MaioresLances with data set "ordem-decrescente"' flowId='33672']
+
+##teamcity[testFinished name='testAvaliadorDeveBuscar3MaioresLances with data set "ordem-decrescente"' duration='0' flowId='33672']
+
+##teamcity[testSuiteFinished name='testAvaliadorDeveBuscar3MaioresLances' flowId='33672']
+
+##teamcity[testSuiteFinished name='Alura\Leilao\Tests\Service\AvaliadorTest' flowId='33672']
