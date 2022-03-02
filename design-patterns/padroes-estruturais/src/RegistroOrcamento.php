@@ -3,7 +3,7 @@
 namespace Alura\DesignPattern;
 
 use Alura\DesignPattern\EstadosOrcamento\Finalizado;
-use HttpAdapter;
+use Alura\DesignPattern\Http\HttpAdapter;
 
 class RegistroOrcamento
 {
@@ -16,7 +16,7 @@ class RegistroOrcamento
     public function registrar(Orcamento $orcamento): void
     {
         if (!$orcamento->estadoAtual instanceof Finalizado) {
-            throw new \DomainException('Apenas orçamentos finalizados podem ser registrados na API.')
+            throw new \DomainException('Apenas orçamentos finalizados podem ser registrados na API.');
         }
         $this->http->post('http://api.registrar.orcamento', [
             'valor' => $orcamento->valor,
