@@ -11,14 +11,21 @@ class LeilaoDaoTest extends TestCase
 {
     public function testInsercaoEBuscaDevemFuncionar()
     {
+        // arrange
         $leilao = new Leilao('Variante 0Km');
-        $leilaoDao = new LeilaoDao(ConnectionCreator::getConnection());
-
+        $pdo = ConnectionCreator::getConnection();
+        $leilaoDao = new LeilaoDao($pdo);
         $leilaoDao->salva($leilao);
+
+        // act
         $leiloes = $leilaoDao->recuperarNaoFinalizados();
 
+        // assert
         self::assertCount(1,$leiloes);
         self::assertContainsOnlyInstancesOf(Leilao::class, $leiloes);
         self::assertSame('Variante 0Km', $leiloes[0]->recuperarDescricao());
+
+        //tear down
+        $pdo->exec('DELETE FROM leiloes;');
     }
 }
