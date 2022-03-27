@@ -10,19 +10,40 @@ use PHPUnit\Framework\TestCase;
 
 class LeilaoDaoTest extends TestCase
 {
-    private PDO $pdo;
+    private static PDO $pdo;
+
+    public static function setUpBeforeClass(): void
+    {
+        self::$pdo = new PDO('sqlite::memory');
+        self::$pdo->exec('create table leiloes
+(
+	id INTEGER
+		primary key,
+	descricao TEXT,
+	finalizado BOOL,
+	dataInicio TEXT
+);
+
+');
+    }
 
     public function setUp(): void
     {
-        $this->pdo = ConnectionCreator::getConnection();
-        $this->pdo->beginTransaction();
+        self::$pdo = ConnectionCreator::getConnection();
+        self::$pdo->beginTransaction();
     }
-    public function testInsercaoEBuscaDevemFuncionar()
+
+    /**
+     * @dataProvider leiloes
+     */
+    public function testBuscaLeiloesNaoFinalizados(array $leiloes)
     {
         // arrange
-        $leilao = new Leilao('Variante 0Km');
-        $leilaoDao = new LeilaoDao($this->pdo);
-        $leilaoDao->salva($leilao);
+        $leilaoDao = new LeilaoDao(self::$pdo);
+
+        foreach ($leiloes as $leilao) {
+            $leilaoDao->salva($leilao);
+        }
 
         // act
         $leiloes = $leilaoDao->recuperarNaoFinalizados();
@@ -35,8 +56,41 @@ class LeilaoDaoTest extends TestCase
 
     }
 
+    /**
+     * @dataProvider leiloes
+     */
+    public function testBuscaLeiloesFinalizados(array $leiloes)
+    {
+        $leilaoDao = new LeilaoDao(self::$pdo);
+
+        foreach ($leiloes as $leilao) {
+            $leilaoDao->salva($leilao);
+        }
+        // act
+        $leiloes = $leilaoDao->recuperarFinalizados();
+
+        // assert
+        self::assertCount(1,$leiloes);
+        self::assertContainsOnlyInstancesOf(Leilao::class, $leiloes);
+        self::assertSame('Fiat 147 0Km', $leiloes[0]->recuperarDescricao());
+
+
+    }
+
+    public function leiloes(): array
+    {
+        $naoFinalizado = new Leilao('Variante 0Km');
+        $finalizado = new Leilao('Fiat 147 0Km');
+        $finalizado->finaliza();
+        return [
+            [
+                [$naoFinalizado, $finalizado]
+            ]
+        ];
+    }
+
     public function tearDown(): void
     {
-        $this->pdo->rollBack();
+        self::$pdo->rollBack();
     }
 }
