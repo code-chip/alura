@@ -51,7 +51,11 @@ class LeilaoDaoTest extends TestCase
         // assert
         self::assertCount(1,$leiloes);
         self::assertContainsOnlyInstancesOf(Leilao::class, $leiloes);
-        self::assertSame('Variante 0Km', $leiloes[0]->recuperarDescricao());
+        self::assertSame(
+            'Variante 0Km',
+            $leiloes[0]->recuperarDescricao()
+        );
+        self::assertFalse($leiloes[0]->estaFinalizado());
 
 
     }
@@ -61,6 +65,7 @@ class LeilaoDaoTest extends TestCase
      */
     public function testBuscaLeiloesFinalizados(array $leiloes)
     {
+        // arrange
         $leilaoDao = new LeilaoDao(self::$pdo);
 
         foreach ($leiloes as $leilao) {
@@ -72,8 +77,11 @@ class LeilaoDaoTest extends TestCase
         // assert
         self::assertCount(1,$leiloes);
         self::assertContainsOnlyInstancesOf(Leilao::class, $leiloes);
-        self::assertSame('Fiat 147 0Km', $leiloes[0]->recuperarDescricao());
-
+        self::assertSame(
+            'Fiat 147 0Km',
+            $leiloes[0]->recuperarDescricao()
+        );
+        self::assertTrue($leiloes[0]->estaFinalizado());
 
     }
 
