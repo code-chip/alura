@@ -6,6 +6,7 @@ class Indicacao
 {
     private Aluno $indicante;
     private Aluno $indicado;
+    private \DateTimeImmutable $data;
 
     /**
      * @param Aluno $indicante
@@ -15,5 +16,6 @@ class Indicacao
     {
         $this->indicante = $indicante;
         $this->indicado = $indicado;
+        $this->data = new \DateTimeImmutable();
     }
 }
