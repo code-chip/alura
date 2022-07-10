@@ -2,7 +2,7 @@
 
 namespace Alura\Arquitetura;
 
-class Alura
+class Aluno
 {
     private Cpf $cpf;
     private string $nome;
