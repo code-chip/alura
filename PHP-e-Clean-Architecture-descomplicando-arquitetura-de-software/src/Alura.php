@@ -4,8 +4,14 @@ namespace Alura\Arquitetura;
 
 class Alura
 {
-    private CPF $cpf;
+    private Cpf $cpf;
     private string $nome;
     private Email $email;
+    private array $telefones;
+
+    public function adicionarTelefone(string $ddd, string $numero)
+    {
+        $this->telefones[] = new Telefone($ddd, $numero);
+    }
 
 }
